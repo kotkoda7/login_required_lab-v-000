@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   
-  root 'sessions#new'
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  get '/destroy', to: 'sessions#destroy'
-  get '/welcome', to: 'sessions#welcome'
-  get '/show', to: 'secrets#show'
+  
+  get 'secrets/new'
+  
+  root 'application#hello'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
+  
+  
   
   
   # The priority is based upon order of creation: first created -> highest priority.
